@@ -1,0 +1,5 @@
+aws_iam="ami-05576a079321f21f8"
+aws_instance_type="t2.micro"
+aws_subnet_id="subnet-002dd57311d7a190b"
+kp="web01key"
+tag_name="dev_env"
