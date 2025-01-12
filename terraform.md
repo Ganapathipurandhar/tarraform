@@ -1,7 +1,7 @@
 # Terraform
 * Terraform is an Infrastructure as Code(IaC) tool developed by HashiCorp by HCL language
     1) IaC involves managing infrastructure programmatically, reducing manual efforts, repeated tasks and errors(by UI it will take minutes to create service --> by IAC it will seconds by API AS CODE--> we can create 100's of services without delay)
-    2) Universally applicable to multiple cloud providers like AWS, Azure,GCP etc (hcl template(yml file) convented to the **API AS CODE as aws api, azure api etc** this api's create Infrastructure )
+    2) Universally applicable to multiple cloud providers like AWS, Azure,GCP etc (hcl template convented to the **API AS CODE as aws api, azure api etc** this api's create Infrastructure )
 
 _____________________________________________________________________________________________________________________________________
 
