@@ -1,1 +1,5 @@
 aws/aws_amazonlinux/.terraform/
+aws/aws_amazonlinux/.terraform.lock.hcl
+aws/aws_amazonlinux/*.tfstate
+aws/aws_amazonlinux/*.tfstate.backup
+*.tfstate.backup
