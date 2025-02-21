@@ -1,0 +1,27 @@
+# Go to repository settings > Branches > Branch protection rules
+# Add a rule for the main branch with the following settings:
+# - Require pull request reviews before merging
+# - Require status checks to pass before merging (e.g., CI checks)
+# - Include administrators
+
+name: Terraform Apply
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  apply:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v1
+
+      - name: Terraform Init
+        run: terraform init
+
+      - name: Terraform Apply
+        run: terraform apply -auto-approve

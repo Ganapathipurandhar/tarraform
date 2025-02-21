@@ -1,0 +1,24 @@
+Pre-Commit Hooks: Use pre-commit hooks to prevent developers from accidentally running the terraform apply command in their local environments. You can create a pre-commit hook that checks the current branch and restricts the command in non-main branches.
+
+Example (pre-commit hook):
+
+~~~
+# .git/hooks/pre-commit
+branch_name=$(git symbolic-ref --short HEAD)
+if [ "$branch_name" != "main" ]; then
+  echo "Error: Cannot run 'terraform apply' on branch '$branch_name'. Switch to the main branch."
+  exit 1
+fi
+~~~
+Environment Variables: Use environment variables to conditionally allow terraform apply only in specific branches or environments. You can set an environment variable in your CI/CD pipeline to control this behavior.
+
+Example (environment variable check):
+
+~~~
+if [ "$BRANCH_NAME" != "main" ]; then
+  echo "Error: Cannot run 'terraform apply' on branch '$BRANCH_NAME'. Switch to the main branch."
+  exit 1
+fi
+terraform apply -auto-approve
+~~~
+Implementing these strategies can help you enforce the proper workflow and ensure that Terraform applies are only executed in the main branch after passing through the necessary review and approval process.
